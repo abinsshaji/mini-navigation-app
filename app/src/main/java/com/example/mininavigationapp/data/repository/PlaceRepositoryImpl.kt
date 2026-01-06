@@ -7,7 +7,7 @@ import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 class PlaceRepositoryImpl @Inject constructor(
-    val placeDataSource: FakePlaceDataSource
+    private val placeDataSource: FakePlaceDataSource
 ) : IPlaceRepository {
     override suspend fun getPlaces(): List<Place> = withContext(Dispatchers.Default) {
         placeDataSource.fetchPlaces()
@@ -17,10 +17,12 @@ class PlaceRepositoryImpl @Inject constructor(
         placeDataSource.fetchPlaces().first { it.id == id }
     }
 
-    override suspend fun getMyLocation(): Place = Place(
-        id = 2555,
-        name = "My Location",
-        latitude = 59.3293,
-        longitude = 18.0686
-    )
+    override suspend fun getMyLocation(): Place = withContext(Dispatchers.Default) {
+        Place(
+            id = 2555,
+            name = "My Location",
+            latitude = 59.3293,
+            longitude = 18.0686
+        )
+    }
 }

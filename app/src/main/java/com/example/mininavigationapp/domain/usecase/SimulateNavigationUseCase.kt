@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.flowOn
 import javax.inject.Inject
 
 class SimulateNavigationUseCase @Inject constructor(
-    val calculateDistanceUseCase: ICalculateDistanceUseCase
+    private val calculateDistanceUseCase: ICalculateDistanceUseCase
 ) : ISimulateNavigationUseCase {
     // mocking speed as 20 meters per second.
     private val MOCK_SPEED_MPS = 20.0
