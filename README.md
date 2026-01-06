@@ -1,6 +1,6 @@
 # 📍 Mini Navigation App
 
-A modern Android application built with **Jetpack Compose** that simulates a real-time navigation experience. This app demonstrates high-level architecture, type-safe navigation, and reactive state management.
+A modern Android application built with **Jetpack Compose** that simulates a real-time navigation experience. This app demonstrates high-level architecture, type-safe navigation and reactive state management.
 
 ---
 
@@ -17,7 +17,7 @@ The project is built using **Clean Architecture** principles and the **MVVM (Mod
 ### 2. Domain Layer (Business Logic)
 - **Use Cases:** Encapsulates specific tasks like `SimulateNavigationUseCase` and `GetPlaceDetailsUseCase`.
 - **Models:** Pure Kotlin data classes representing entities like `Place`.
-- **Location Provider:** A single source of truth for the user's starting point, facilitating consistency across screens.
+- **My Location Provider:** A single source of truth for the user's starting point, facilitating consistency across screens.
 - **Decoupling:** Business logic is independent of data sources and UI frameworks.
 - **Main safety:** The distance calculation is are offloaded to `Dispatchers.Default` using the `flowOn` operator, ensuring the Main thread remains unblocked for UI rendering.
 
