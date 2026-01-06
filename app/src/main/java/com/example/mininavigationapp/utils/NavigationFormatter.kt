@@ -8,6 +8,7 @@ object NavigationFormatter {
             "${meters.toInt()} m"
         }
     }
+
     fun formatEta(seconds: Int): String {
         return when {
             seconds < 60 -> "Less than 1 min"
@@ -15,6 +16,7 @@ object NavigationFormatter {
                 val mins = seconds / 60
                 "$mins min"
             }
+
             else -> {
                 val hours = seconds / 3600
                 val mins = (seconds % 3600) / 60

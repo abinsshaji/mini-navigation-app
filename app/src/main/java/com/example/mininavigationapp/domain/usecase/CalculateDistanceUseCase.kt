@@ -6,7 +6,11 @@ import kotlin.math.*
 class CalculateDistanceUseCase @Inject constructor() : ICalculateDistanceUseCase {
 
     private val EARTH_RADIUS_METERS = 6371000.0
-    // Haversine formula
+
+    /**
+     * Calculates the great-circle distance between two points using the Haversine formula.
+     * @see <a href="https://en.wikipedia.org/wiki/Haversine_formula">Haversine Formula</a>
+     */
     override operator fun invoke(
         startLat: Double,
         startLng: Double,

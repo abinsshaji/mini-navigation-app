@@ -63,7 +63,8 @@ class PlaceDetailViewModel @Inject constructor(
                     longitude = destination.longitude
                 )
             } catch (e: Exception) {
-                _uiState.value = PlaceDetailUiState.Error(e.message ?: "Failed to load place details")
+                _uiState.value =
+                    PlaceDetailUiState.Error(e.message ?: "Failed to load place details")
             }
         }
     }

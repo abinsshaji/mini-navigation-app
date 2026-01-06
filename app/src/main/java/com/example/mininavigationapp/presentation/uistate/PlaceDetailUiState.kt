@@ -4,7 +4,7 @@ sealed interface PlaceDetailUiState {
     data object Loading : PlaceDetailUiState
 
     data class Success(
-        val placeId : Int,
+        val placeId: Int,
         val name: String,
         val distanceInMeters: Double,
         val latitude: Double,

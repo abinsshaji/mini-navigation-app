@@ -74,7 +74,9 @@ fun NavSimContent(
                         color = MaterialTheme.colorScheme.secondary
                     )
                     LinearProgressIndicator(
-                        modifier = Modifier.fillMaxWidth().padding(top = 24.dp)
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(top = 24.dp)
                     )
                 }
 

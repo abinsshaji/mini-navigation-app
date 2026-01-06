@@ -27,7 +27,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    // 3. Start the Navigation Flow
+                    // Start the Navigation Flow
                     AppNavigation()
                 }
             }

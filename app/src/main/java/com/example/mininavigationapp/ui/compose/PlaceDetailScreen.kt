@@ -49,17 +49,25 @@ fun PlaceDetailContent(
                 is PlaceDetailUiState.Loading -> {
                     CircularProgressIndicator()
                 }
+
                 is PlaceDetailUiState.Success -> {
                     Text(text = state.name, style = MaterialTheme.typography.headlineMedium)
                     Spacer(modifier = Modifier.height(8.dp))
-                    Text(text = "${state.latitude} , ${state.longitude}", style = MaterialTheme.typography.bodyLarge)
+                    Text(
+                        text = "${state.latitude} , ${state.longitude}",
+                        style = MaterialTheme.typography.bodyLarge
+                    )
                     Spacer(modifier = Modifier.height(24.dp))
-                    Text(text = NavigationFormatter.formatDistance(state.distanceInMeters), style = MaterialTheme.typography.bodyMedium)
+                    Text(
+                        text = NavigationFormatter.formatDistance(state.distanceInMeters),
+                        style = MaterialTheme.typography.bodyMedium
+                    )
                     Spacer(modifier = Modifier.height(24.dp))
                     Button(onClick = { onStartNav(state.placeId) }) {
                         Text("Start Navigation")
                     }
                 }
+
                 is PlaceDetailUiState.Error -> {
                     Text("Error: ${state.message}", color = MaterialTheme.colorScheme.error)
                 }
@@ -78,7 +86,8 @@ fun PlaceDetailPreviewSuccess() {
                 name = "Eiffel Tower",
                 distanceInMeters = 25000.55,
                 latitude = 48.8584,
-                longitude = 2.2945),
+                longitude = 2.2945
+            ),
             onStartNav = {}
         )
     }

@@ -47,9 +47,13 @@ fun PlaceListContent(
                     }
                 }
             }
+
             is PlacesUiState.Loading -> {
-                LinearProgressIndicator(modifier = Modifier.fillMaxWidth().padding(padding))
+                LinearProgressIndicator(modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(padding))
             }
+
             is PlacesUiState.Error -> {
                 Text("Error: ${state.message}", modifier = Modifier.padding(padding))
             }
@@ -64,7 +68,7 @@ fun PlaceListPreview() {
         PlaceListContent(
             state = PlacesUiState.Success(
                 places = listOf(
-                    Place(1, "Eiffel Tower", latitude = 48.8584, longitude =  2.2945),
+                    Place(1, "Eiffel Tower", latitude = 48.8584, longitude = 2.2945),
                     Place(2, "Colosseum", latitude = 41.8902, longitude = 12.4922)
                 )
             ),
